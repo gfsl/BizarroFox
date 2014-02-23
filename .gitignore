@@ -1,0 +1,15 @@
+# temporary Unity files to ignore
+/Library
+/Temp
+
+# XCode stuff:
+/XCode/Libraries
+/XCode/Data
+/XCode/*.xcodeproj/*.pbxuser
+/XCode/*.xcodeproj/xcuserdata
+/XCode/*.xcodeproj/project.xcworkspace/xcuserdata
+
+# temporary files:
+/Assembly-*
+.DS_Store
+

@@ -1,0 +1,22 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\arduinoDriver.cs">
+    <Files>
+      <File FileName="Assets\Scripts\ShipController.js" Line="203" Column="20" />
+      <File FileName="Assets\Scripts\arduinoDriver.cs" Line="42" Column="9" />
+      <File FileName="Assets\Scripts\arduinoSelector.cs" Line="50" Column="33" />
+      <File FileName="Assets\Scripts\Asteroid.js" Line="37" Column="34" />
+      <File FileName="Assets\Scripts\Tiler.js" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\ParamHolder.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\inputDriver.js" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\warnings.js" Line="23" Column="27" />
+      <File FileName="Assets\Scripts\pointsText.js" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\finalPointsText.js" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\fireworksTimer.js" Line="12" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
