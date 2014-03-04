@@ -1,8 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{110A58CB-6870-951A-92AA-2975FEDAE02D}") = "Bizarro Fox", "Assembly-CSharp-firstpass-vs.csproj", "{E5635490-47BA-1ABE-95BE-E7E7AE388C0D}"
-EndProject
 Project("{110A58CB-6870-951A-92AA-2975FEDAE02D}") = "Bizarro Fox", "Assembly-CSharp-vs.csproj", "{93D37C25-0AD6-D594-A551-4145151DC1C5}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5635490-47BA-1ABE-95BE-E7E7AE388C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5635490-47BA-1ABE-95BE-E7E7AE388C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5635490-47BA-1ABE-95BE-E7E7AE388C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5635490-47BA-1ABE-95BE-E7E7AE388C0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93D37C25-0AD6-D594-A551-4145151DC1C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93D37C25-0AD6-D594-A551-4145151DC1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D37C25-0AD6-D594-A551-4145151DC1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-					GlobalSection(MonoDevelopProperties) = preSolution
+																																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

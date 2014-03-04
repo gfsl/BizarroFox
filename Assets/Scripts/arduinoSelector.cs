@@ -60,10 +60,10 @@ public class arduinoSelector : MonoBehaviour {
 		} else {
 			paramHolder.SendMessage("SetChoice", ports[curChoice]);
 		}
+
 		Instantiate(shipPrefab, new Vector3(0.0f, -3.0f, -2.8f), Quaternion.identity);
+
 		Destroy(gameObject.GetComponent("arduinoSelector"));
-		//Object.DontDestroyOnLoad(paramHolder);
-		//Object.DontDestroyOnLoad(GameObject.Find("Plane"));
-		//Application.LoadLevel("Level");
+		Object.DontDestroyOnLoad(paramHolder);
 	}
 }
