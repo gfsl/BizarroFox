@@ -15,7 +15,7 @@ public class Asteroid : MonoBehaviour {
 		transform.localScale *= Random.Range(minSize, maxSize);
 		transform.Rotate(Random.Range(0, 359), Random.Range(0, 359), Random.Range(0, 359));
 
-		rotSpeed = Random.value;
+		rotSpeed = Random.value / 4;
 		movSpeed = 1+(Random.value/2);
 		rot = new Vector3();
 
@@ -35,7 +35,7 @@ public class Asteroid : MonoBehaviour {
 			rot.z = -1;
 		}
 
-		rot *= rotSpeed / 4;
+		rot *= rotSpeed;
 	
 	}
 	
@@ -49,6 +49,6 @@ public class Asteroid : MonoBehaviour {
 		}	
 		transform.Translate(0,0, -speed * Time.deltaTime, Space.World);
 		transform.Rotate(rot);
-
 	}
+
 }

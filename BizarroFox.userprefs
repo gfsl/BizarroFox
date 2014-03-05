@@ -1,20 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Demo" expanded="True">
-              <Node name="scripts" expanded="True">
-                <Node name="BaseDemoGUI.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="Scripts" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\GoKit\GoTween.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Asteroid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShipController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraProximityShake.cs" Line="26" Column="1" />
+      <File FileName="Assets\Plugins\GoKit\GoTween.cs" Line="7" Column="1" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

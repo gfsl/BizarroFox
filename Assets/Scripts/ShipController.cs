@@ -13,6 +13,7 @@ public class ShipController : MonoBehaviour {
 	}
 
 	public Vector2 maxTilt;
+	public Vector3 cameraTiltFactor;
 	public float speed, shipSpeed;
 
 	// Materials
@@ -70,18 +71,12 @@ public class ShipController : MonoBehaviour {
 			transform.Translate(movement, Space.World);
 
 			var tilt = new Vector3();
-			if (velocity.x > 0) {
-				tilt.z = 360-(velocity.x*maxTilt.x);
-			} else {		
-				tilt.z = -(velocity.x*maxTilt.x);
-			}
-			if (velocity.y > 0) {
-				tilt.x = 360-velocity.y*maxTilt.y;
-			} else {		
-				tilt.x = -velocity.y*maxTilt.y;
-			}
+			tilt.z = Mathf.Lerp (maxTilt.x, -maxTilt.x, (velocity.x+1)/2);
+			tilt.x = Mathf.Lerp (maxTilt.y, -maxTilt.y, (velocity.y+1)/2);
+
 			transform.eulerAngles = tilt;
-			
+			Camera.main.transform.eulerAngles = 
+				new Vector3(tilt.x * cameraTiltFactor.x, tilt.z * cameraTiltFactor.y, tilt.z * cameraTiltFactor.z);
 
 			// Viewport boundaries
 			if ((transform.position.x < -GameController.Instance.xBound)||(transform.position.x > GameController.Instance.xBound))
@@ -89,7 +84,7 @@ public class ShipController : MonoBehaviour {
 				transform.position = new Vector3(Mathf.Clamp(transform.position.x, -GameController.Instance.xBound, GameController.Instance.xBound),
 				                                 transform.position.y, transform.position.z);
 			}
-			if ((transform.position.y < -GameController.Instance.yMin)||(transform.position.x > GameController.Instance.yMax))
+			if ((transform.position.y < -GameController.Instance.yMin)||(transform.position.y > GameController.Instance.yMax))
 			{
 				transform.position = new Vector3(transform.position.x,
 				                                 Mathf.Clamp(transform.position.y, GameController.Instance.yMin, GameController.Instance.yMax),
@@ -173,10 +168,10 @@ public class ShipController : MonoBehaviour {
 		}
 		if (!dead && other.name == "Close") {
 			if (!immune) BonusPoints(Vector3.Distance(other.transform.position, transform.position));
-			Go.to (Camera.main.transform, 0.66f, new GoTweenConfig()
-			       .shake(new Vector3(.15f, .05f, 0f), GoShakeType.Position)
-			       .shake(new Vector3(0f, 0f, 2.5f), GoShakeType.Eulers)
-			       );
+//			Go.to (Camera.main.transform, 0.66f, new GoTweenConfig()
+//			       .shake(new Vector3(.15f, .05f, 0f), GoShakeType.Position)
+//			       .shake(new Vector3(0f, 0f, 2.5f), GoShakeType.Eulers)
+//			       );
 		}
 	}
 	

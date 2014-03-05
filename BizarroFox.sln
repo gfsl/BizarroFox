@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{EE1B4FF6-E550-450F-0F92-7133A13317E9}") = "BizarroFox", "Assembly-CSharp-firstpass.csproj", "{A20232D8-BBC2-6B25-D6A3-768796EB542E}"
+EndProject
 Project("{EE1B4FF6-E550-450F-0F92-7133A13317E9}") = "BizarroFox", "Assembly-CSharp.csproj", "{8775C8E3-39D4-7659-E346-F80C22F6F226}"
 EndProject
 Project("{EE1B4FF6-E550-450F-0F92-7133A13317E9}") = "BizarroFox", "Assembly-CSharp-Editor.csproj", "{E491D43D-FD2E-7AED-6670-0498A5AF7925}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A20232D8-BBC2-6B25-D6A3-768796EB542E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20232D8-BBC2-6B25-D6A3-768796EB542E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20232D8-BBC2-6B25-D6A3-768796EB542E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20232D8-BBC2-6B25-D6A3-768796EB542E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8775C8E3-39D4-7659-E346-F80C22F6F226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8775C8E3-39D4-7659-E346-F80C22F6F226}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8775C8E3-39D4-7659-E346-F80C22F6F226}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-			GlobalSection(MonoDevelopProperties) = preSolution
+												GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
