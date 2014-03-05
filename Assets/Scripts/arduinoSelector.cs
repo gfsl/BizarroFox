@@ -14,6 +14,10 @@ public class arduinoSelector : MonoBehaviour {
 	public GameObject shipPrefab;
 	
 	public int LogoSize = 600;
+
+	public float time = 0.5f;
+	public Vector3 shakePos;
+	public Vector3 shakeTilt;
 	
 	// Use this for initialization
 	void Start () {
@@ -50,6 +54,14 @@ public class arduinoSelector : MonoBehaviour {
 		if (GUI.Button(new Rect(Screen.width/2-50, height+120, 100, 35), "START!")) {
 			StartGame();
 		}
+
+		if (GUI.Button (new Rect(10, 10, 100, 35), "Shake")) {
+			Go.to (Camera.main.transform, time, new GoTweenConfig()
+			       .shake(shakePos, GoShakeType.Position)
+			       .shake(shakeTilt, GoShakeType.Eulers)
+			       );
+		}
+
 	}
 	
 	void StartGame () {

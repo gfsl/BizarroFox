@@ -119,6 +119,10 @@ public class ShipController : MonoBehaviour {
 		lives--;
 
 		transform.Translate(-1000,-1000,-1000);
+		Go.to (Camera.main.transform, 0.5f, new GoTweenConfig()
+		       .shake(new Vector3(1, 1, 0), GoShakeType.Position)
+		       .shake(new Vector3(10, 10, 10), GoShakeType.Eulers)
+		       );
 
 		if (lives > 0) {
 			yield return new WaitForSeconds(2f);
@@ -167,8 +171,12 @@ public class ShipController : MonoBehaviour {
 		if (!dead && !immune && other.name == "Death") {
 			StartCoroutine(Die());
 		}
-		if (!dead && !immune && other.name == "Close") {
-			BonusPoints(Vector3.Distance(other.transform.position, transform.position));
+		if (!dead && other.name == "Close") {
+			if (!immune) BonusPoints(Vector3.Distance(other.transform.position, transform.position));
+			Go.to (Camera.main.transform, 0.66f, new GoTweenConfig()
+			       .shake(new Vector3(.15f, .05f, 0f), GoShakeType.Position)
+			       .shake(new Vector3(0f, 0f, 2.5f), GoShakeType.Eulers)
+			       );
 		}
 	}
 	
