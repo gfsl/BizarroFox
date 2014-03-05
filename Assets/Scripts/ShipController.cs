@@ -174,15 +174,17 @@ public class ShipController : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other) {
 		if (!dead && !immune && other.name == "Rock") {
+//			Debug.Break();
 			StartCoroutine(Die());
 		}
-//		if (!dead && other.name == "Close") {
+		if (!dead && other.name == "Close") {
+			other.transform.parent.GetComponent<AudioSource>().Play ();
 //			if (!immune) BonusPoints(Vector3.Distance(other.transform.position, transform.position));
 //			Go.to (Camera.main.transform, 0.66f, new GoTweenConfig()
 //			       .shake(new Vector3(.15f, .05f, 0f), GoShakeType.Position)
 //			       .shake(new Vector3(0f, 0f, 2.5f), GoShakeType.Eulers)
 //			       );
-//		}
+		}
 	}
 	
 	void BonusPoints(float distance) {

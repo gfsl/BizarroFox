@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraProximityShake : MonoBehaviour {
+public class CameraProximity : MonoBehaviour {
 
 	public float time = 0.66f;
 	public Vector3 shakePosition;
@@ -12,6 +12,7 @@ public class CameraProximityShake : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.name == "Close") {
 			Shake();
+//			other.transform.parent.GetComponent<AudioSource>().Play ();
 		}
 	}
 	
@@ -23,8 +24,8 @@ public class CameraProximityShake : MonoBehaviour {
 			_tween.destroy();
 			_tween = null;
 		}
-		_tween = Go.to (Camera.main.transform, time, new GoTweenConfig()
-//		                .shake(shakePosition, GoShakeType.Position)
+		_tween = Go.to (Camera.main.transform.parent, time, new GoTweenConfig()
+                .shake(shakePosition, GoShakeType.Position)
 			       .shake(shakeEulers, GoShakeType.Eulers)
 			       );
 

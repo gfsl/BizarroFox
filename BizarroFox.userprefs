@@ -1,12 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraProximityShake.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShipController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Asteroid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ShipController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Asteroid.cs" Line="56" Column="30" />
+      <File FileName="Assets\Scripts\ShipController.cs" Line="179" Column="1" />
       <File FileName="Assets\Scripts\GameController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraProximityShake.cs" Line="28" Column="50" />
       <File FileName="Assets\Plugins\GoKit\GoTween.cs" Line="7" Column="1" />
+      <File FileName="Assets\FX\ScreenFlash.cs" Line="18" Column="81" />
+      <File FileName="Assets\Scripts\arduinoSelector.cs" Line="47" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

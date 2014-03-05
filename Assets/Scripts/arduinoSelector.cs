@@ -55,9 +55,9 @@ public class arduinoSelector : MonoBehaviour {
 			StartGame();
 		}
 
-		if (GUI.Button (new Rect(10, 10, 100, 35), "Shake")) {
-			gameObject.AddComponent<ScreenFlash>();
-		}
+//		if (GUI.Button (new Rect(10, 10, 100, 35), "Debug")) {
+//			gameObject.AddComponent<ScreenFlash>();
+//		}
 
 	}
 	
