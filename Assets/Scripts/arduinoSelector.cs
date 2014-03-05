@@ -73,6 +73,7 @@ public class arduinoSelector : MonoBehaviour {
 		Instantiate(shipPrefab, new Vector3(0.0f, -3.0f, -2.8f), Quaternion.identity);
 
 		Destroy(gameObject.GetComponent("arduinoSelector"));
-		Object.DontDestroyOnLoad(paramHolder);
+		Screen.lockCursor = true;
+
 	}
 }
