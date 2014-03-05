@@ -25,7 +25,8 @@ public class ShipController : MonoBehaviour {
 	public bool immune = false;
 	public bool permImmune = false;
 	public GameObject explosion;
-	public ParticleSystem revive;
+	public ParticleSystem revivefx;
+	public ParticleSystem immunefx;
 	public int lives = 3;
 	private Vector3 origin;
 	
@@ -113,6 +114,7 @@ public class ShipController : MonoBehaviour {
 		Instantiate(explosion, transform.position, transform.rotation);
 		lives--;
 
+		var lastPos = transform.position;
 		transform.Translate(-1000,-1000,-1000);
 		Go.to (Camera.main.transform, 0.5f, new GoTweenConfig()
 		       .shake(new Vector3(1, 1, 0), GoShakeType.Position)
@@ -121,15 +123,22 @@ public class ShipController : MonoBehaviour {
 
 		if (lives > 0) {
 			yield return new WaitForSeconds(2f);
-			transform.position = origin;
+			Instantiate(revivefx, lastPos, Quaternion.identity);
+			yield return new WaitForSeconds(.3f);
+			transform.position = lastPos;
 			transform.rotation = Quaternion.identity;
 			StartCoroutine(Immunity(3f));
 		} else {
 			var temp = Instantiate(finalPointsParticle, origin, Quaternion.identity) as GameObject;
 			temp.GetComponent<TextMesh>().text = points.ToString("f0");
+			yield return new WaitForSeconds(5f);
 			points = 0f;
 			lastLifeBonus = 0;
 			lives = 3;
+			Instantiate(revivefx, origin, Quaternion.identity);
+			yield return new WaitForSeconds(.3f);
+			transform.position = origin;
+			transform.rotation = Quaternion.identity;
 			StartCoroutine(Immunity());
 		}
 		dead = false;
@@ -142,6 +151,7 @@ public class ShipController : MonoBehaviour {
 			permImmune = false;
 			yield return new WaitForSeconds(time);
 			if (immune) ImmunityOff();
+			dead = false;
 		} else {
 			permImmune = true;
 			return true;
@@ -151,28 +161,28 @@ public class ShipController : MonoBehaviour {
 	void ImmunityOn() {
 		immune = true;
 		model.renderer.material = immuneMat;
-		revive.gameObject.SetActive(true);
+		immunefx.gameObject.SetActive(true);
 	}
 
 	void ImmunityOff() {
 		immune = false;
 		model.renderer.material = baseMat;
-		revive.gameObject.SetActive(false);
-		revive.Clear();
+		immunefx.gameObject.SetActive(false);
+		immunefx.Clear();
 	}
 
 
 	void OnTriggerEnter (Collider other) {
-		if (!dead && !immune && other.name == "Death") {
+		if (!dead && !immune && other.name == "Rock") {
 			StartCoroutine(Die());
 		}
-		if (!dead && other.name == "Close") {
-			if (!immune) BonusPoints(Vector3.Distance(other.transform.position, transform.position));
+//		if (!dead && other.name == "Close") {
+//			if (!immune) BonusPoints(Vector3.Distance(other.transform.position, transform.position));
 //			Go.to (Camera.main.transform, 0.66f, new GoTweenConfig()
 //			       .shake(new Vector3(.15f, .05f, 0f), GoShakeType.Position)
 //			       .shake(new Vector3(0f, 0f, 2.5f), GoShakeType.Eulers)
 //			       );
-		}
+//		}
 	}
 	
 	void BonusPoints(float distance) {

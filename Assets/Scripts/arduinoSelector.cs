@@ -56,10 +56,7 @@ public class arduinoSelector : MonoBehaviour {
 		}
 
 		if (GUI.Button (new Rect(10, 10, 100, 35), "Shake")) {
-			Go.to (Camera.main.transform, time, new GoTweenConfig()
-			       .shake(shakePos, GoShakeType.Position)
-			       .shake(shakeTilt, GoShakeType.Eulers)
-			       );
+			gameObject.AddComponent<ScreenFlash>();
 		}
 
 	}
