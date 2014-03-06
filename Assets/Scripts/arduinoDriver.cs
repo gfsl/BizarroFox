@@ -11,14 +11,21 @@ public class arduinoDriver : MonoBehaviour {
 	string PortChoice = "None";
 
 	public Vector2 movement = new Vector2(32, 32);
-	public int badFramesLeft = 0;
-	public int badFramesRight = 0;
+	private float badFramesLeft = 0f;
+	private float badFramesRight = 0f;
 	private List<Vector2> velocities;
 	private ShipController ship;
+
+	private GameObject warningR;
+	private GameObject warningL;
+	public float warningTime = 1f;
 
 	void Start () {
 		ship = GetComponent<ShipController>();
 		velocities = new List<Vector2>();
+
+		warningR = GameObject.Find ("warningR");
+		warningL = GameObject.Find ("warningL");
 
 		if (GameObject.Find("ParamHolder")) {
 			paramHolder = GameObject.Find("ParamHolder").GetComponent<ParamHolder>() as ParamHolder;
@@ -66,15 +73,23 @@ public class arduinoDriver : MonoBehaviour {
 
 			if (movement.x != 127) {
 				badFramesRight = 0;
+				if (warningR != null) warningR.SetActive(false);
 			} else {
 				movement.x = 0f;
-				badFramesRight++;
+				badFramesRight += Time.deltaTime;
+				if ((badFramesRight > warningTime) && !warningR.activeSelf) {
+					warningR.SetActive(true);
+				}
 			}	
 			if (movement.y != 127) {
 				badFramesLeft = 0;
+				if (warningL != null) warningL.SetActive(false);
 			} else {
 				movement.y = 0f;
-				badFramesLeft++;
+				badFramesLeft += Time.deltaTime;
+				if ((badFramesLeft > warningTime) && !warningL.activeSelf) {
+					warningL.SetActive(true);
+				}
 			}
 			// Waiting for input?
 			if (ship.permImmune && badFramesLeft == 0 && badFramesRight == 0) {
