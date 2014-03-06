@@ -10,6 +10,7 @@ public class arduinoSelector : MonoBehaviour {
 	public GameObject paramHolderPrefab;
 	public GUISkin MyGUISkin;
 	public Texture2D Logo;
+	public Texture2D Credits;
 	
 	public GameObject shipPrefab;
 	
@@ -44,8 +45,9 @@ public class arduinoSelector : MonoBehaviour {
 	void OnGUI () {
 		GUI.skin = MyGUISkin;
 		
-		GUI.Box(new Rect(Screen.width/2-LogoSize/2, Screen.height/20*13, LogoSize, LogoSize/2), Logo);
-		
+		GUI.Box(new Rect(Screen.width/2-Logo.width/2, Screen.height/20*12, Logo.width, Logo.height), Logo);
+		GUI.Box(new Rect(Screen.width/2-Credits.width/2, Screen.height-Credits.height, Credits.width, Credits.height), Credits);
+
 		GUI.Label(new Rect(Screen.width/2-75, 75, 100, 20), "Arduino port:");
 
 		int height = ports.Count * 40;
