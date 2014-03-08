@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
 
 	public static GameController Instance;
 
+	public string PortChoice = "None";
+
 	public float xBound;
 	public float yMin, yMax;
 	public float interval = 8f;

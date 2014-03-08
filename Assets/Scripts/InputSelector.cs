@@ -12,6 +12,8 @@ public class InputSelector : MonoBehaviour {
 
 	void Start () {
 		ports.Add("Keyboard (WASD)");
+		ports.Add("Test 1");
+		ports.Add("Test 2");
 		foreach (var port in SerialPort.GetPortNames()) {
 			ports.Add ("Arduino ("+port+")");
 		}
