@@ -72,7 +72,7 @@ public class arduinoDriver : MonoBehaviour {
 				
 			}
 
-			Debug.Log(movement.ToString());
+//			Debug.Log(movement.ToString());
 			if (movement.x != 127) {
 				badFramesRight = 0;
 				lastMovement.x = movement.x;
