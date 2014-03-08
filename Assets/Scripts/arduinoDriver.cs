@@ -11,21 +11,22 @@ public class arduinoDriver : MonoBehaviour {
 	string PortChoice = "None";
 
 	public Vector2 movement = new Vector2(32, 32);
+	private Vector2 lastMovement = new Vector2();
 	private float badFramesLeft = 0f;
 	private float badFramesRight = 0f;
 	private List<Vector2> velocities;
 	private ShipController ship;
 
-	private GameObject warningR;
-	private GameObject warningL;
-	public float warningTime = 1f;
+	public GameObject warningR;
+	public GameObject warningL;
+	public float warningTime = 0f;
 
 	void Start () {
 		ship = GetComponent<ShipController>();
 		velocities = new List<Vector2>();
 
-		warningR = GameObject.Find ("warningR");
-		warningL = GameObject.Find ("warningL");
+		warningR = GameController.Instance.warningR;
+		warningL = GameController.Instance.warningL;
 
 		if (GameObject.Find("ParamHolder")) {
 			paramHolder = GameObject.Find("ParamHolder").GetComponent<ParamHolder>() as ParamHolder;
@@ -71,11 +72,13 @@ public class arduinoDriver : MonoBehaviour {
 				
 			}
 
+			Debug.Log(movement.ToString());
 			if (movement.x != 127) {
 				badFramesRight = 0;
+				lastMovement.x = movement.x;
 				if (warningR != null) warningR.SetActive(false);
 			} else {
-				movement.x = 0f;
+				movement.x = lastMovement.x;
 				badFramesRight += Time.deltaTime;
 				if ((badFramesRight > warningTime) && !warningR.activeSelf) {
 					warningR.SetActive(true);
@@ -83,9 +86,10 @@ public class arduinoDriver : MonoBehaviour {
 			}	
 			if (movement.y != 127) {
 				badFramesLeft = 0;
+				lastMovement.y = movement.y;
 				if (warningL != null) warningL.SetActive(false);
 			} else {
-				movement.y = 0f;
+				movement.y = lastMovement.y;
 				badFramesLeft += Time.deltaTime;
 				if ((badFramesLeft > warningTime) && !warningL.activeSelf) {
 					warningL.SetActive(true);

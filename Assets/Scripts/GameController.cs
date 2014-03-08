@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour {
 	public float interval = 8f;
 
 	public ShipController ship;
+	public GameObject warningR;
+	public GameObject warningL;
 
 	void Awake () {
 		if (Instance == null) {
