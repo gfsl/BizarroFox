@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum InputTypes {
+	Keyboard,
+	Arduino
+}
+
 public class GameController : MonoBehaviour {
 
 	public static GameController Instance;
@@ -12,6 +17,8 @@ public class GameController : MonoBehaviour {
 	public ShipController ship;
 	public GameObject warningR;
 	public GameObject warningL;
+
+	public InputTypes InputType = InputTypes.Keyboard;
 
 	void Awake () {
 		if (Instance == null) {

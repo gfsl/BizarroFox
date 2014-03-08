@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\arduinoSelector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/arduinoSelector.cs">
     <Files>
-      <File FileName="Assets\Scripts\arduinoDriver.cs" Line="82" Column="6" />
-      <File FileName="Assets\Scripts\ShipController.cs" Line="183" Column="1" />
-      <File FileName="Assets\Scripts\inputDriver.cs" Line="35" Column="1" />
-      <File FileName="Assets\Scripts\arduinoSelector.cs" Line="57" Column="16" />
+      <File FileName="Assets/Scripts/arduinoSelector.cs" Line="42" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

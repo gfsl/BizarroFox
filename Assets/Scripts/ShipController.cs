@@ -52,10 +52,10 @@ public class ShipController : MonoBehaviour {
 			if (paramHolder.portChoice != "None") {
 				gameObject.AddComponent<arduinoDriver>();
 			} else {
-				gameObject.AddComponent<inputDriver>();
+				gameObject.AddComponent<keyboardDriver>();
 			}
 		} else {
-			gameObject.AddComponent<inputDriver>();
+			gameObject.AddComponent<keyboardDriver>();
 		}
 		
 		origin = transform.position;	
