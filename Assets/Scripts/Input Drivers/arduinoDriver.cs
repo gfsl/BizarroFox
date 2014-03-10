@@ -7,7 +7,6 @@ using System.IO.Ports;
 public class arduinoDriver : MonoBehaviour {
 
 	SerialPort stream = null;
-	ParamHolder paramHolder;
 	string PortChoice = "None";
 
 	public Vector2 movement = new Vector2(32, 32);
@@ -17,22 +16,19 @@ public class arduinoDriver : MonoBehaviour {
 	private List<Vector2> velocities;
 	private ShipController ship;
 
-	public GameObject warningR;
-	public GameObject warningL;
+	public dfSprite warningR;
+	public dfSprite warningL;
 	public float warningTime = 0f;
 
 	void Start () {
 		ship = GetComponent<ShipController>();
 		velocities = new List<Vector2>();
 
-		warningR = GameController.Instance.warningR;
-		warningL = GameController.Instance.warningL;
+		warningR = GameObject.Find ("WarningR").GetComponent<dfSprite>();
+		warningL = GameObject.Find ("WarningL").GetComponent<dfSprite>();
 
-		if (GameObject.Find("ParamHolder")) {
-			paramHolder = GameObject.Find("ParamHolder").GetComponent<ParamHolder>() as ParamHolder;
-			PortChoice = paramHolder.portChoice;
-		}
-		
+		PortChoice = GameController.Instance.PortChoice;
+
 		if (PortChoice == "None") {
 			Destroy(GetComponent<arduinoDriver>());
 		} else {		
@@ -76,23 +72,23 @@ public class arduinoDriver : MonoBehaviour {
 			if (movement.x != 127) {
 				badFramesRight = 0;
 				lastMovement.x = movement.x;
-				if (warningR != null) warningR.SetActive(false);
+				if (warningR != null) warningR.IsVisible = false;
 			} else {
 				movement.x = lastMovement.x;
 				badFramesRight += Time.deltaTime;
-				if ((badFramesRight > warningTime) && !warningR.activeSelf) {
-					warningR.SetActive(true);
+				if ((badFramesRight > warningTime) && !warningR.IsVisible) {
+					warningR.IsVisible = true;
 				}
 			}	
 			if (movement.y != 127) {
 				badFramesLeft = 0;
 				lastMovement.y = movement.y;
-				if (warningL != null) warningL.SetActive(false);
+				if (warningL != null) warningL.IsVisible = false;
 			} else {
 				movement.y = lastMovement.y;
 				badFramesLeft += Time.deltaTime;
-				if ((badFramesLeft > warningTime) && !warningL.activeSelf) {
-					warningL.SetActive(true);
+				if ((badFramesLeft > warningTime) && !warningL.IsVisible) {
+					warningL.IsVisible = true;
 				}
 			}
 			// Waiting for input?

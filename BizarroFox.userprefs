@@ -1,32 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InputSelector.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Input Drivers/keyboardDriver.cs" Line="6" Column="1" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="19" Column="1" />
-      <File FileName="Assets/Scripts/ShipController.cs" Line="60" Column="1" />
-      <File FileName="Assets/Scripts/InputSelector.cs" Line="31" Column="41" />
-      <File FileName="Assets/Scripts/Input Drivers/arduinoDriver.cs" Line="23" Column="2" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="57" Column="2" />
+      <File FileName="Assets\Scripts\Enums.cs" Line="10" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Daikon Forge" expanded="True">
-              <Node name="DFGUI" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="Controls" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="Scripts" expanded="True">
-              <Node name="Input Drivers" expanded="True" />
-              <Node name="InputSelector.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
